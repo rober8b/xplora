@@ -1,0 +1,16 @@
+.speakers-section {
+  padding: 4rem 2rem;
+  background: #fff;
+  text-align: center;
+}
+
+.speakers-section h2 {
+  font-size: 2rem;
+  margin-bottom: 2rem;
+}
+
+.speakers-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 2rem;
+}

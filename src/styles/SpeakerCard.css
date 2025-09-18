@@ -1,0 +1,28 @@
+.speaker-card {
+  background: #fafafa;
+  border-radius: 12px;
+  padding: 1.5rem;
+  text-align: center;
+  transition: box-shadow 0.2s;
+}
+
+.speaker-card:hover {
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+}
+
+.speaker-card img {
+  width: 100%;
+  border-radius: 50%;
+  margin-bottom: 1rem;
+}
+
+.speaker-card h3 {
+  font-size: 1.1rem;
+  margin-bottom: 0.25rem;
+  color: #000;
+}
+
+.speaker-card p {
+  color: #555;
+  font-size: 0.9rem;
+}
