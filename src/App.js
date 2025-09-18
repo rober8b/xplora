@@ -6,7 +6,7 @@ import Team from './components/Team';
 import Speakers from './components/Speakers';
 import Footer from './components/Footer';
 
-import './styles/App.css';  // si necesitas estilos globales de layout
+import './App.css';  // si necesitas estilos globales de layout
 
 // Datos ejemplo
 const jobs = [
