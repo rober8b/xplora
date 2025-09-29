@@ -1,0 +1,64 @@
+.inicio {
+  padding: 32px;
+  text-align: center;
+}
+
+.inicio-title {
+  font-size: 24px;
+  font-weight: bold;
+  color: #4f46e5; /* indigo-600 */
+  margin-bottom: 16px;
+}
+
+.inicio-description {
+  color: #374151; /* gray-700 */
+  margin-bottom: 24px;
+  font-size: 16px;
+}
+
+.inicio-button {
+  background-color: #4f46e5; /* indigo-600 */
+  color: #ffffff;
+  padding: 12px 24px;
+  border-radius: 8px;
+  font-weight: 600;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.inicio-button:hover {
+  background-color: #4338ca; /* indigo-700 */
+}
+
+.inicio-cards {
+  margin-top: 40px;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 24px;
+}
+
+@media (min-width: 768px) {
+  .inicio-cards {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.inicio-card {
+  background-color: #ffffff;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  border-radius: 8px;
+  padding: 24px;
+}
+
+.card-title {
+  font-size: 18px;
+  font-weight: 600;
+  margin-bottom: 8px;
+}
+
+.card-description {
+  color: #4b5563; /* gray-600 */
+  font-size: 14px;
+}

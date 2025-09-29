@@ -1,0 +1,59 @@
+.bolsa-empleo {
+  padding: 32px;
+}
+
+.bolsa-title {
+  font-size: 24px;
+  font-weight: bold;
+  color: #4f46e5; /* color indigo-600 */
+  margin-bottom: 24px;
+}
+
+.ofertas-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 24px;
+}
+
+@media (min-width: 768px) {
+  .ofertas-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+.oferta-card {
+  background-color: #ffffff;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  border-radius: 8px;
+  padding: 24px;
+}
+
+.oferta-puesto {
+  font-size: 18px;
+  font-weight: 600;
+  margin-bottom: 4px;
+}
+
+.oferta-empresa {
+  color: #4b5563; /* gris */
+  margin-bottom: 8px;
+}
+
+.oferta-descripcion {
+  margin-top: 8px;
+  color: #374151;
+}
+
+.oferta-btn {
+  margin-top: 16px;
+  background-color: #4f46e5;
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.oferta-btn:hover {
+  background-color: #4338ca;
+}

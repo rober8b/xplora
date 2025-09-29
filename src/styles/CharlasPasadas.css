@@ -1,0 +1,50 @@
+.charlas-pasadas {
+  padding: 32px;
+}
+
+.charlas-title {
+  font-size: 24px;
+  font-weight: bold;
+  color: #4f46e5; /* color indigo-600 */
+  margin-bottom: 24px;
+}
+
+.charlas-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 24px;
+}
+
+@media (min-width: 768px) {
+  .charlas-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+.charla-card {
+  background-color: #ffffff;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  border-radius: 8px;
+  padding: 24px;
+}
+
+.charla-titulo {
+  font-size: 18px;
+  font-weight: 600;
+  margin-bottom: 4px;
+}
+
+.charla-orador {
+  color: #4b5563;
+  margin-bottom: 8px;
+}
+
+.charla-link {
+  color: #4f46e5;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.charla-link:hover {
+  text-decoration: underline;
+}

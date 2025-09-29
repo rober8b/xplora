@@ -1,0 +1,36 @@
+.postulaciones-container {
+  padding: 32px; /* p-8 */
+}
+
+.postulaciones-title {
+  font-size: 24px; /* text-2xl */
+  font-weight: bold;
+  color: #4f46e5; /* indigo-600 */
+  margin-bottom: 24px; /* mb-6 */
+}
+
+.postulaciones-list {
+  list-style-type: disc;
+  padding-left: 20px; /* list-inside */
+}
+
+.postulaciones-item {
+  margin-bottom: 8px;
+  font-size: 14px;
+  color: #374151; /* gray-700 */
+}
+
+.postulaciones-empty {
+  font-size: 14px;
+  color: #374151;
+}
+
+.postulaciones-link {
+  background: none;
+  border: none;
+  color: #4f46e5; /* indigo-600 */
+  text-decoration: underline;
+  cursor: pointer;
+  padding: 0;
+  font-size: 14px;
+}
