@@ -10,18 +10,23 @@ import Footer from "./components/Footer";
 
 // 🔹 Datos simulados
 const eventosMock = [
-  { titulo: "Workshop Design Thinking", fecha: "10/10/2023", lugar: "Auditorio UCEMA", descripcion: "Taller práctico sobre innovación." },
-  { titulo: "Networking Emprendedor", fecha: "15/10/2023", lugar: "Online", descripcion: "Conectá con otros emprendedores." },
+  { titulo: "Como hacer crecer tu marca personal? - Beltran Briones", fecha: "7/10/2025", lugar: "Auditorio UCEMA", descripcion: "Taller práctico sobre innovación.", link: "https://docs.google.com/forms/d/e/1FAIpQLSfFyfbyCRijM-oCh6BWhhb1MT3zYYtYNryaRJtDM3HQUMOgPQ/viewform?usp=dialog" },
+  { titulo: "Workshop IA - Datricas", fecha: "15/10/2025", lugar: "Online", descripcion: "Explora las últimas tendencias en IA.", link: "https://docs.google.com/forms/d/e/1FAIpQLSfFyfbyCRijM-oCh6BWhhb1MT3zYYtYNryaRJtDM3HQUMOgPQ/viewform?usp=dialog" },
+  { titulo: "El futuro de las Fintech - Pier Paolo", fecha: "24/10/2025", lugar: "Oficinas UALA", descripcion: "Un análisis profundo de las tendencias en Fintech.", link: "https://docs.google.com/forms/d/e/1FAIpQLSfFyfbyCRijM-oCh6BWhhb1MT3zYYtYNryaRJtDM3HQUMOgPQ/viewform?usp=dialog" },
+  { titulo: "LaBitconf", fecha: "3/11/2025", lugar: "Costa Salguero", descripcion: "La conferencia más grande de Latinoamérica sobre Bitcoin y Blockchain.", link: "https://labitconf.com/" },
 ];
 
 const charlasMock = [
-  { titulo: "Cómo financiar tu startup", orador: "María López", grabacion: "#", material: "#" },
-  { titulo: "Marketing digital", orador: "Juan Pérez", grabacion: "#", material: "#" },
+  { titulo: "Cómo financiar tu startup", orador: "Tino Mossu", grabacion: "https://www.youtube.com/@XploraUcema", material: "https://drive.google.com/drive/home" },
+  { titulo: "Marketing digital", orador: "Colorado Masivo", grabacion: "https://www.youtube.com/@XploraUcema", material: "https://drive.google.com/drive/home" },
 ];
 
 const ofertasMock = [
-  { puesto: "Analista de Marketing", empresa: "Startup X", descripcion: "Buscamos estudiante para marketing digital." },
-  { puesto: "Desarrollador Web", empresa: "Tech UCEMA", descripcion: "Oportunidad para programadores juniors." },
+  { puesto: "Analista de Marketing", empresa: "Startup PonziBro", descripcion: "Buscamos estudiantes de marketing digital." },
+  { puesto: "Desarrollador Web", empresa: "Vibe Coding Company", descripcion: "Oportunidad para programadores juniors." },
+  { puesto: "Responsable de Ventas", empresa: "Importados Dubai", descripcion: "Buscamos vendedores experimentados" },
+  { puesto: "Contador", empresa: "152 Company", descripcion: "Buscamos estudiantes de contabilidad." },
+
 ];
 
 function App() {

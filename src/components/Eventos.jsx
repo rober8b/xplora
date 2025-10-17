@@ -10,6 +10,13 @@ export default function Eventos({ eventos }) {
             <h3 className="evento-titulo">{evento.titulo}</h3>
             <p className="evento-info">{evento.fecha} - {evento.lugar}</p>
             <p className="evento-descripcion">{evento.descripcion}</p>
+            <button 
+              onClick={() => window.open(evento.link, "_blank")}
+              className="evento-btn"
+            >
+              Inscribirme
+            </button>
+            <img src={evento.imagen} alt={evento.titulo} className="evento-imagen" />
           </div>
         ))}
       </div>

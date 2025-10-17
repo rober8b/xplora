@@ -7,8 +7,6 @@
 
 /* Tipografía global */
 body {
-  font-family: 'Inter', Arial, sans-serif;
-  background-color: #ffffff;
   color: #111;
   line-height: 1.6;
   -webkit-font-smoothing: antialiased;
@@ -31,7 +29,7 @@ a:hover {
   display: inline-block;
   padding: 0.6rem 1.2rem;
   border: none;
-  border-radius: 8px;
+  border-radius: 15px ;
   cursor: pointer;
   font-weight: 500;
   font-size: 1rem;

@@ -1,10 +1,11 @@
 import { Briefcase, Calendar, Home, LogOut, Users } from "lucide-react";
 import '../styles/Navigation.css';
+import logo from '../assets/logo.png';
 
 export default function Navigation({ currentSection, setCurrentSection, user, logout, setShowLoginModal }) {
   return (
     <nav className="nav-bar">
-      <h1 className="nav-title">Club de Emprendedores UCEMA</h1>
+      <img className="nav-logo" src={logo} alt="Xplora Logo" />
 
       <div className="nav-links">
         <button 
