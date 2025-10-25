@@ -1,5 +1,13 @@
 .charlas-pasadas {
   padding: 32px;
+  min-height: 100vh;
+  background: #f9f9fb;
+  padding: 1rem 7rem;
+}
+
+.charlas-container{
+  max-width: 1100px;
+  margin: 0 auto;
 }
 
 .charlas-title {
@@ -22,13 +30,14 @@
 }
 
 .charla-card {
-  background-color: #ffffff;
+  border: 1px solid #5c3ef9;
   box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-  border-radius: 8px;
+  border-radius: 15px;
   padding: 24px;
 }
 
 .charla-titulo {
+  color: #5c3ef9;
   font-size: 18px;
   font-weight: 600;
   margin-bottom: 4px;

@@ -1,10 +1,17 @@
 .nav-bar {
+  background: #f9f9fb;
+  padding: 16px 24px;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.nav-bar_container{
+  max-width: 1100px;
+  margin: 0 auto;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background: linear-gradient(135deg, #31105c, #633c8a);
-  padding: 16px 24px;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
 }
 
 .nav-logo {
@@ -23,7 +30,7 @@
   border: none;
   cursor: pointer;
   font-size: 14px;
-  color: #e2e2e2; /* gris base */
+  color: #000000c4; /* gris base */
   display: flex;
   align-items: center;
 }
@@ -35,7 +42,7 @@
 }
 
 .nav-links button.active {
-  color: #000000; /* indigo-600 */
+  color: #5c3ef9; /* indigo-600 */
   font-weight: bold;
 }
 
@@ -53,17 +60,17 @@
 }
 
 .login-btn {
-  background-color: #ffffff;
-  color: #000000;
-  border: none;
-  padding: 12px 24px;
+  color: #5c3ef9;
+  padding: 8px 20px;
   border-radius: 15px;
   cursor: pointer;
   font-weight: bold;
+  transition: all 0.3s ease;
+  display: inline-block;
+  border: 1px solid #5c3ef9;
 }
 
 .login-btn:hover {
-  background-color: #4338ca; /* un poco más oscuro al hover */
   color: #ffffff;
-  transition: background-color ease-in-out 0.2s;
+  background: #4a2fe2;
 }

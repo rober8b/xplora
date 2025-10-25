@@ -1,5 +1,12 @@
 .eventos {
-  padding: 32px;
+  min-height: 100vh;
+  background: #f9f9fb;
+  padding: 1rem 7rem;
+}
+
+.eventos-container{
+  max-width: 1100px;
+  margin: 0 auto;
 }
 
 .eventos-title {
@@ -22,13 +29,14 @@
 }
 
 .evento-card {
-  background-color: #ffffff;
+  border: 1px solid #5c3ef9;
   box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-  border-radius: 8px;
+  border-radius: 15px;
   padding: 24px;
 }
 
 .evento-titulo {
+  color: #5c3ef9;
   font-size: 18px;
   font-weight: 600;
   margin-bottom: 4px;
@@ -45,16 +53,19 @@
 }
 
 .evento-btn {
-  margin-top: 6px;
-  background-color: #4f46e5;
-  color: white;
-  border: none;
-  padding: 8px 16px;
-  border-radius: 6px;
+  color: #5c3ef9;
+  padding: 8px 20px;
+  border-radius: 15px;
+  font-size: 15px;
   cursor: pointer;
+  font-weight: bold;
+  transition: all 0.3s ease;
+  display: inline-block;
+  border: 1px solid #5c3ef9;
 }
 
 .evento-btn:hover {
-  background-color: #4338ca;
+  color: #ffffff;
+  background: #4a2fe2;
 }
 

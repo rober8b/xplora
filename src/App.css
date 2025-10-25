@@ -5,7 +5,6 @@
   box-sizing: border-box;
 }
 
-/* Tipografía global */
 body {
   color: #111;
   line-height: 1.6;
@@ -24,45 +23,6 @@ a:hover {
   color: #000;
 }
 
-/* Botones reutilizables */
-.btn {
-  display: inline-block;
-  padding: 0.6rem 1.2rem;
-  border: none;
-  border-radius: 15px ;
-  cursor: pointer;
-  font-weight: 500;
-  font-size: 1rem;
-  transition: background 0.2s, transform 0.1s;
-}
-
-.btn:hover {
-  transform: translateY(-2px);
-}
-
-.btn:active {
-  transform: translateY(0);
-}
-
-/* Variante de botón negro */
-.btn-black {
-  background: #000;
-  color: #fff;
-}
-
-.btn-black:hover {
-  background: #333;
-}
-
-/* Variante de botón claro */
-.btn-light {
-  background: #f5f5f5;
-  color: #111;
-}
-
-.btn-light:hover {
-  background: #e5e5e5;
-}
 
 /* Secciones globales */
 section {
@@ -75,11 +35,9 @@ h1, h2, h3, h4 {
   color: #111;
 }
 
-/* Contenedor centralizado */
 .container {
   max-width: 1200px;
   margin: 0 auto;
   padding: 0 1rem;
 }
 
-/* Footer y navbar globales se heredan de sus CSS específicos */

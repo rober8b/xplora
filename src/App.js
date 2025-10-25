@@ -38,40 +38,96 @@ function App() {
   const [registerForm, setRegisterForm] = useState({ name: "", email: "", password: "" });
   const [jobApplications, setJobApplications] = useState([]);
 
-  const handleLogin = () => {
-    if (loginForm.email && loginForm.password) {
-      setUser({ name: "Usuario", email: loginForm.email });
-      setShowLoginModal(false);
-      setLoginForm({ email: "", password: "" });
-    } else {
+// Login de user
+  const handleLogin = async () => {
+    if (!loginForm.email || !loginForm.password) {
       alert("Completa todos los campos");
+      return;
+    }
+
+    try {
+      const res = await fetch("http://127.0.0.1:5000/login", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        credentials: "include",
+        body: JSON.stringify(loginForm),
+      });
+
+      const data = await res.json();
+
+      if (res.ok) {
+        setUser({ name: data.usuario.nombre, email: data.usuario.email });
+        setShowLoginModal(false);
+        setLoginForm({ email: "", password: "" });
+      } else {
+        alert(data.error || "Error al iniciar sesión");
+      }
+    } catch (err) {
+      console.error(err);
+      alert("No se pudo conectar con el servidor");
     }
   };
 
-  const handleRegister = () => {
-    if (registerForm.name && registerForm.email && registerForm.password) {
-      setUser({ name: registerForm.name, email: registerForm.email });
-      setShowLoginModal(false);
-      setRegisterForm({ name: "", email: "", password: "" });
-    } else {
+// Registracion de user
+  const handleRegister = async () => {
+    if (!registerForm.name || !registerForm.email || !registerForm.password) {
       alert("Completa todos los campos");
+      return;
+    }
+
+    try {
+      const res = await fetch("http://127.0.0.1:5000/register", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        credentials: "include",
+        body: JSON.stringify({
+          nombre: registerForm.name,
+          email: registerForm.email,
+          password: registerForm.password,
+        }),
+      });
+
+      const data = await res.json();
+
+      if (res.ok) {
+        alert("Registro exitoso, ahora podés iniciar sesión");
+        setIsRegistering(false);
+        setRegisterForm({ name: "", email: "", password: "" });
+      } else {
+        alert(data.error || "Error al registrarse");
+      }
+    } catch (err) {
+      console.error(err);
+      alert("No se pudo conectar con el servidor");
     }
   };
 
-  const logout = () => setUser(null);
+// Logout de user
+  const logout = () => {
+    setUser(null);
+    alert("Sesión cerrada");
+  };
 
+// Aplicar a empleo
   const handleJobApplication = (oferta) => {
     if (user) {
       setJobApplications([...jobApplications, oferta]);
       alert(`Te postulaste a: ${oferta.puesto}`);
     } else {
-      setShowLoginModal(true);
+        setShowLoginModal(true);
     }
   };
 
+
   return (
     <div className="Landing-Page">
-      <Navigation currentSection={currentSection} setCurrentSection={setCurrentSection} user={user} logout={logout} setShowLoginModal={setShowLoginModal} />
+      <Navigation 
+        currentSection={currentSection} 
+        setCurrentSection={setCurrentSection} 
+        user={user} 
+        logout={logout} 
+        setShowLoginModal={setShowLoginModal} 
+      />
 
       <main>
         {currentSection === "inicio" && <Inicio setCurrentSection={setCurrentSection} />}

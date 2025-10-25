@@ -1,18 +1,27 @@
 import '../styles/Inicio.css';
+import logo from '../assets/logo.png'
 
 export default function Inicio({ setCurrentSection }) {
   return (
     <div className="inicio">
-      <h2 className="inicio-title">Bienvenido al Club de Emprendedores UCEMA 🚀</h2>
-      <p className="inicio-description">
-        Conectamos estudiantes con oportunidades, eventos, charlas y empleos relacionados al mundo emprendedor.
-      </p>
-      <button
-        onClick={() => setCurrentSection("eventos")}
-        className="inicio-button"
-      >
-        Explorar Eventos
-      </button>
+
+      <div className="inicio-banner_container">
+        <div className="inicio-banner">
+          <h2 className="inicio-title">Conectá con experiencias, descubrí oportunidades y crecé.</h2>
+          <p className="inicio-description">
+            Somos Xplora el club de emprendedores de la UCEMA.
+          </p>
+          <button
+            onClick={() => setCurrentSection("eventos")}
+            className="inicio-button"
+          >
+            Explorar Eventos
+          </button>
+        </div>
+        <div className="inicio-banner-img">
+          <img src={logo} alt="" />
+        </div>
+      </div>
 
       <div className="inicio-cards">
         <div className="inicio-card">
