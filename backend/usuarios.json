@@ -1,17 +1,11 @@
 [
     {
+        "id": 1,
         "nombre": "rober",
-        "email": "robertino@gmail.com",
-        "password": "1234"
-    },
-    {
-        "nombre": "ro",
-        "email": "robertinobarbuto@gmail.com",
-        "password": "1234"
-    },
-    {
-        "nombre": "roci",
-        "email": "mailprueba@gmail.com",
-        "password": "1234"
+        "email": "robermail@mail.com",
+        "password": "1234",
+        "aplicaciones": [
+            2
+        ]
     }
 ]

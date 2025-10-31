@@ -39,7 +39,7 @@ export default function LoginModal({
             />
             <button onClick={handleRegister} className="login-modal-button">Registrarse</button>
             <p className="login-modal-switch">
-              ¿Ya tienes cuenta? <button onClick={() => setIsRegistering(false)} className="login-modal-link">Inicia sesión</button>
+              ¿Ya tenes cuenta? <button onClick={() => setIsRegistering(false)} className="login-modal-link">Inicia sesión</button>
             </p>
           </div>
         ) : (
@@ -60,7 +60,7 @@ export default function LoginModal({
             />
             <button onClick={handleLogin} className="login-modal-button">Iniciar Sesión</button>
             <p className="login-modal-switch">
-              ¿No tienes cuenta? <button onClick={() => setIsRegistering(true)} className="login-modal-link">Regístrate</button>
+              ¿No tenes cuenta? <button onClick={() => setIsRegistering(true)} className="login-modal-link">Regístrate</button>
             </p>
           </div>
         )}

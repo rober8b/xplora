@@ -1,12 +1,16 @@
 .inicio {
+  background: #f9f9fb;
+}
+
+.inicio-container{
   display: flex;
   flex-direction: column;
   justify-content: center;
+  margin: 0 auto;
   padding: 0 7rem;
   text-align: left; 
-  background: #f9f9fb;
-  min-height: 100vh;
   color: #1b1b1b;
+  max-width: 1100px;
 }
 
 .inicio-banner_container{
@@ -61,6 +65,41 @@
   box-shadow: 0 15px 35px rgba(92, 62, 249, 0.35);
 }
 
+.inicio-video{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin-bottom: 1rem;
+}
+.inicio-video-title {
+  font-size: 1.3rem;
+  font-weight: 600;
+  color: #4a2fe2;
+}
+
+.inicio-video video {
+  width: 100%;
+  max-width: 683px;
+  height: 450px;
+  border-radius: 15px;
+}
+
+.inicio-video_charlas {
+  text-align: center;
+  margin-top: 1rem;
+}
+
+.inicio-video_charlas h2 {
+  margin-bottom: 10px;
+}
+
+.inicio-video_charlas p {
+  color: #4b5563;
+  font-size: 1rem;
+  margin-bottom: 1rem;
+  margin-top: 0;
+}
 .inicio-cards {
   margin: 4rem;
   display: grid;
@@ -110,4 +149,12 @@
 .inicio > * {
   position: relative;
   z-index: 1; /* mantiene el contenido encima del fondo decorativo */
+}
+
+.inicio-jobs {
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 3rem;
+  max-width: 1100px;
 }

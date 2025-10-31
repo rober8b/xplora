@@ -12,7 +12,7 @@
 .eventos-title {
   font-size: 24px;
   font-weight: bold;
-  color: #4f46e5; /* color indigo-600 */
+  color: #4f46e5;
   margin-bottom: 24px;
 }
 
@@ -29,10 +29,12 @@
 }
 
 .evento-card {
-  border: 1px solid #5c3ef9;
+  border: 1px solid #5c3ef9;  
   box-shadow: 0 2px 8px rgba(0,0,0,0.1);
   border-radius: 15px;
   padding: 24px;
+  display: flex;
+  flex-direction: column; /* 🔑 Fuerza disposición vertical */
 }
 
 .evento-titulo {
@@ -43,7 +45,7 @@
 }
 
 .evento-info {
-  color: #4b5563; /* gris */
+  color: #4b5563;
   margin-bottom: 8px;
 }
 
@@ -53,19 +55,35 @@
 }
 
 .evento-btn {
+  align-self: start;
   color: #5c3ef9;
-  padding: 8px 20px;
-  border-radius: 15px;
+  padding: 10px 20px;
+  border-radius: 12px;
   font-size: 15px;
-  cursor: pointer;
   font-weight: bold;
-  transition: all 0.3s ease;
-  display: inline-block;
   border: 1px solid #5c3ef9;
+  background: transparent;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin-bottom: 20px;
 }
 
 .evento-btn:hover {
-  color: #ffffff;
-  background: #4a2fe2;
+  color: #fff;
+  background: #5c3ef9;
 }
 
+.evento-mapa {
+  width: 100%;
+  height: 200px;
+  border: 0;
+  margin-top: auto;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  object-fit: cover;
+
+}
+
+.evento-mapa iframe {
+  border-radius: 10px;
+}

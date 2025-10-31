@@ -17,7 +17,12 @@ export default function Eventos({ eventos }) {
               >
                 Inscribirme
               </button>
-              <img src={evento.imagen} alt={evento.titulo} className="evento-imagen" />
+              <iframe
+                src={evento.mapa}
+                title={evento.titulo}
+                className="evento-mapa"
+                allowFullScreen
+              ></iframe>
             </div>
           ))}
         </div>
