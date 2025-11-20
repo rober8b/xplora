@@ -5,7 +5,8 @@ export default function LoginModal({
   isRegistering, setIsRegistering,
   loginForm, setLoginForm,
   registerForm, setRegisterForm,
-  handleLogin, handleRegister
+  handleLogin, handleRegister,
+  ofertasMock
 }) {
   if (!showLoginModal) return null;
 

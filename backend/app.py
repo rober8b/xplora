@@ -116,6 +116,33 @@ def obtener_aplicaciones(id_usuario):
 
     return jsonify({"aplicaciones": usuario['aplicaciones']})
 
+# Obtener las postulaciones de un usuario con detalles
+@app.route('/api/postulaciones/<int:id_usuario>', methods=['GET'])
+def get_postulaciones(id_usuario):
+    # Cargar usuarios y verificar si existe
+    usuarios = cargar_usuarios()
+    usuario = next((u for u in usuarios if u['id'] == id_usuario), None)
+    if not usuario:
+        return jsonify({"error": "Usuario no encontrado"}), 404
+
+    # Cargar lista de trabajos (si la tenés en un JSON, por ejemplo 'trabajos.json')
+    if not os.path.exists("trabajos.json"):
+        return jsonify([])
+
+    with open("trabajos.json", "r", encoding="utf-8") as f:
+        trabajos = json.load(f)
+
+    # Filtrar solo los trabajos que el usuario aplicó
+    postulaciones = [t for t in trabajos if t["id"] in usuario["aplicaciones"]]
+    return jsonify(postulaciones)
+
+@app.route('/api/mis_postulaciones', methods=['GET'])
+def mis_postulaciones():
+    if 'usuario' not in session:
+        return jsonify({"error": "No hay sesión activa"}), 401
+    id_usuario = session['usuario']['id']
+    return get_postulaciones(id_usuario)
+
 
 if __name__ == '__main__':
     app.run(debug=True)

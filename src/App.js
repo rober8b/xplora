@@ -66,37 +66,106 @@ function App() {
   const [jobApplications, setJobApplications] = useState([]);
 
 // Login de user
-  const handleLogin = async () => {
-    if (!loginForm.email || !loginForm.password) {
-      alert("Completa todos los campos");
-      return;
+const handleLogin = async () => {
+  if (!loginForm.email || !loginForm.password) {
+    alert("Completa todos los campos");
+    return;
+  }
+
+  try {
+    const res = await fetch("http://127.0.0.1:5000/login", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      credentials: "include",
+      body: JSON.stringify(loginForm),
+    });
+
+    const data = await res.json();
+
+    if (res.ok) {
+      const usuario = data.usuario;
+
+      // reconstruir postulaciones a partir de los IDs guardados
+      const userApplications = usuario.aplicaciones?.map(
+        id => ofertasMock.find(oferta => oferta.id === id)
+      ).filter(Boolean); // quita los nulls si no encuentra alguna oferta
+
+      setUser({ name: usuario.nombre, email: usuario.email, id: usuario.id });
+      setJobApplications(userApplications || []); 
+      setShowLoginModal(false);
+      setLoginForm({ email: "", password: "" });
+      
+    } else {
+      alert(data.error || "Error al iniciar sesión");
     }
 
-    try {
-      const res = await fetch("http://127.0.0.1:5000/login", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        credentials: "include",
-        body: JSON.stringify(loginForm),
-      });
+  } catch (err) {
+    console.error(err);
+    alert("No se pudo conectar con el servidor");
+  }
+};
 
-      const data = await res.json();
+// const handleLogin = async () => {
+//   if (!loginForm.email || !loginForm.password) {
+//     alert("Completa todos los campos");
+//     return;
+//   }
 
-      if (res.ok) {
-        setUser({ name: data.usuario.nombre, email: data.usuario.email, id: data.usuario.id });
-        setShowLoginModal(false);
-        setLoginForm({ email: "", password: "" });
-      } else {
-        alert(data.error || "Error al iniciar sesión");
-      }
-    } catch (err) {
-      console.error(err);
-      alert("No se pudo conectar con el servidor");
-    }
-  };
+//   try {
+//     const res = await fetch("http://127.0.0.1:5000/login", {
+//       method: "POST",
+//       headers: { "Content-Type": "application/json" },
+//       credentials: "include",
+//       body: JSON.stringify(loginForm),
+//     });
+
+//     const data = await res.json();
+
+//     if (res.ok) {
+//       const userData = {
+//         id: data.usuario.id,
+//         nombre: data.usuario.nombre,
+//         email: data.usuario.email,
+//       };
+
+//       setUser(userData);
+//       setShowLoginModal(false);
+//       setLoginForm({ email: "", password: "" });
+
+//       // Traer las postulaciones guardadas para este usuario
+//       const appsRes = await fetch(`http://127.0.0.1:5000/aplicaciones/${userData.id}`, {
+//         method: "GET",
+//         headers: { "Content-Type": "application/json" },
+//         credentials: "include",
+//       });
+
+//       if (appsRes.ok) {
+//         const appsData = await appsRes.json();
+
+//         // Mapear IDs a los objetos completos de ofertasMock
+//         const userApplications = appsData.aplicaciones
+//           .map(id => ofertasMock.find(oferta => oferta.id === id))
+//           .filter(Boolean); // evita errores si alguna oferta fue eliminada
+
+//         setJobApplications(userApplications);
+//       } else {
+//         console.error("No se pudieron obtener las postulaciones del usuario.");
+//         setJobApplications([]);
+//       }
+
+//     } else {
+//       alert(data.error || "Error al iniciar sesión");
+//     }
+
+//   } catch (err) {
+//     console.error(err);
+//     alert("No se pudo conectar con el servidor");
+//   }
+// };
 
 // Registracion de user
-  const handleRegister = async () => {
+ 
+const handleRegister = async () => {
     if (!registerForm.name || !registerForm.email || !registerForm.password) {
       alert("Completa todos los campos");
       return;
@@ -132,6 +201,7 @@ function App() {
 // Logout de user
   const logout = () => {
     setUser(null);
+    setJobApplications([]); 
     alert("Sesión cerrada");
   };
 
@@ -170,7 +240,6 @@ function App() {
   useEffect(() => {
     console.log("User:", user);
     if (user?.nombre) {
-      // Fetch job applications for the user
       const fetchApplications = async () => {
         try {
           const res = await fetch(`http://127.0.0.1:5000/aplicaciones/${user.id}`, {
@@ -223,6 +292,7 @@ function App() {
         loginForm={loginForm} setLoginForm={setLoginForm}
         registerForm={registerForm} setRegisterForm={setRegisterForm}
         handleLogin={handleLogin} handleRegister={handleRegister}
+        ofertasMock={ofertasMock}
       />
     </div>
   );
